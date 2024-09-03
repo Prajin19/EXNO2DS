@@ -44,6 +44,7 @@ dt.shape
 dt.describe()
 ```
 ![image](https://github.com/user-attachments/assets/e733e78c-24e2-4bfe-8155-fc3d32cd3c38)
+### Categorical Data Analysis
 ```
 dt.nunique()
 ```
@@ -57,6 +58,7 @@ per=(dt["Survived"].value_counts()/dt.shape[0]*100).round(2)
 per
 ```
 ![image](https://github.com/user-attachments/assets/d8d4a610-1997-4f21-971e-acdb6cd1287d)
+### Univariate Analysis
 ```
 sns.countplot(data=dt,x="Survived")
 ```
@@ -70,6 +72,7 @@ dt.rename(columns={'Sex':'Gender'},inplace=True)
 dt
 ```
 ![image](https://github.com/user-attachments/assets/929359d9-308f-487f-9c09-6c991cc869df)
+### Bivariate Analysis
 ```
 sns.catplot(x='Gender',col='Survived',kind='count',data=dt,height=5,aspect=.7)
 ```
@@ -91,6 +94,7 @@ sns.scatterplot(x=dt['Age'],y=dt['Fare'])
 sns.jointplot(x=dt['Age'],y=dt['Fare'],data=dt)
 ```
 ![image](https://github.com/user-attachments/assets/803e1906-4883-4515-8d69-77e0c02bd7f1)
+### Multivariate Analysis
 ```
 fig,ax1=plt.subplots(figsize=(8,5))
 pt=sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=dt)
@@ -100,6 +104,7 @@ pt=sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=dt)
 sns.catplot(data=dt,col='Survived',x='Gender',hue='Pclass',kind='count')
 ```
 ![image](https://github.com/user-attachments/assets/796dd68f-9122-4023-a2f8-1bea0acdea7e)
+### Correlation
 ```
 numdt=dt.select_dtypes(exclude=[object])
 corr=numdt.corr()
@@ -120,4 +125,4 @@ sns.pairplot(dt)
 
 
 # RESULT
-        <<INCLUDE YOUR RESULT HERE>>
+Hence,exploratory data analaysis is successfully performed and verified on the given dataset.
